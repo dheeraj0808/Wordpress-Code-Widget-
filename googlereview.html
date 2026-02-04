@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Reviews Widget</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .google-review-widget {
+            max-width: 540px;
+            margin: 40px auto;
+            padding: 0 16px;
+        }
+
+        .widget-title {
+            font-size: 38px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1f1f1f;
+        }
+
+        .review-card {
+            background: #f8f9fa;
+            border: 1px solid #dadce0;
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .google-logo {
+            flex-shrink: 0;
+        }
+
+        .review-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .info-label {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #202124;
+        }
+
+        .rating-number {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #1f1f1f;
+            margin-bottom: 4px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 12px;
+        }
+
+        .star {
+            width: 28px;
+            height: 28px;
+        }
+
+        .review-count {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f1f1f;
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .widget-title {
+                font-size: 34px;
+            }
+
+            .review-card {
+                padding: 36px 28px;
+                gap: 30px;
+            }
+
+            .rating-number {
+                font-size: 48px;
+            }
+
+            .review-count {
+                font-size: 28px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .google-review-widget {
+                margin: 24px auto;
+            }
+
+            .widget-title {
+                font-size: 30px;
+                margin-bottom: 16px;
+            }
+
+            .review-card {
+                flex-direction: column;
+                padding: 28px 20px;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .google-logo svg {
+                width: 70px;
+                height: 70px;
+            }
+
+            .rating-number {
+                font-size: 44px;
+            }
+
+            .stars {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .star {
+                width: 26px;
+                height: 26px;
+            }
+
+            .review-count {
+                font-size: 26px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 360px) {
+            .widget-title {
+                font-size: 26px;
+            }
+
+            .review-card {
+                padding: 24px 16px;
+            }
+
+            .rating-number {
+                font-size: 38px;
+            }
+
+            .star {
+                width: 24px;
+                height: 24px;
+            }
+
+            .review-count {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="google-review-widget">
+        <h2 class="widget-title">Reviews</h2>
+        <div class="review-card">
+            <div class="google-logo">
+                <svg width="85" height="85" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M45.9 36.8182V53.3636H69.3818C68.4 58.2955 65.8227 62.5114 61.8545 65.3409L75.6 75.9682C83.4136 68.8636 87.9545 58.3773 87.9545 45.8182C87.9545 42.9545 87.7091 40.1727 87.2614 37.4727L45.9 36.8182Z"
+                        fill="#4285F4" />
+                    <path
+                        d="M20.6591 53.7545L18.1636 55.6773L9.36818 62.3864C16.7727 76.8636 30.1909 87.5455 45.9 87.5455C57.6409 87.5455 67.4591 83.3727 75.3545 75.9682L61.6091 65.3409C58.0091 67.7045 53.4273 69.1364 45.9 69.1364C34.6091 69.1364 25.0045 61.8136 21.6818 51.9955L20.6591 53.7545Z"
+                        fill="#34A853" />
+                    <path
+                        d="M9.36818 27.6136C6.05455 34.2409 4.09091 41.6455 4.09091 49.5C4.09091 57.3545 6.05455 64.7591 9.36818 71.3864C9.36818 71.4273 21.7227 51.9545 21.7227 51.9545C20.7 49.3364 20.1273 46.4955 20.1273 43.6909C20.1273 40.8864 20.7 38.0455 21.7227 35.4273L9.36818 27.6136Z"
+                        fill="#FBBC05" />
+                    <path
+                        d="M45.9 25.1136C53.8364 25.1136 60.8727 27.8182 66.3545 33.0136L78.3 20.8182C70.2 13.3636 59.5227 9 45.9 9C30.1909 9 16.7727 19.6409 9.36818 34.1591L21.7227 46.5136C25.0045 36.6955 34.6091 29.3727 45.9 29.3727"
+                        fill="#EA4335" />
+                </svg>
+            </div>
+            <div class="review-info">
+                <div class="info-label">Average ratings</div>
+                <div class="rating-number">4.9</div>
+                <div class="stars">
+                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <div class="review-count">309 reviews</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
