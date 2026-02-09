@@ -13,7 +13,7 @@
         }
 
         body {
-            background: #f5f5f5;
+            background: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -33,12 +33,12 @@
 
         .review-card {
             background: #f8f9fa;
-            border: 1px solid #dadce0;
             border-radius: 16px;
             padding: 40px;
             display: flex;
             align-items: center;
             gap: 36px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .google-logo {
@@ -57,18 +57,23 @@
             color: #202124;
         }
 
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
         .rating-number {
             font-size: 52px;
             font-weight: 700;
             line-height: 1.1;
             color: #1f1f1f;
-            margin-bottom: 4px;
         }
 
         .stars {
             display: flex;
             gap: 2px;
-            margin-bottom: 12px;
         }
 
         .star {
@@ -125,13 +130,17 @@
                 height: 70px;
             }
 
+            .rating-row {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
             .rating-number {
                 font-size: 44px;
             }
 
             .stars {
                 justify-content: center;
-                margin-bottom: 10px;
             }
 
             .star {
@@ -192,30 +201,43 @@
             </div>
             <div class="review-info">
                 <div class="info-label">Average ratings</div>
-                <div class="rating-number">4.9</div>
-                <div class="stars">
-                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
-                        <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
-                        <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
-                        <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
-                        <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                    <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
-                        <path
-                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
+                <div class="rating-row">
+                    <div class="rating-number">4.8</div>
+                    <div class="stars">
+                        <!-- Full Star 1 -->
+                        <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <!-- Full Star 2 -->
+                        <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <!-- Full Star 3 -->
+                        <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <!-- Full Star 4 -->
+                        <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <!-- Half Star (80% filled) -->
+                        <svg class="star" viewBox="0 0 24 24">
+                            <defs>
+                                <linearGradient id="halfStar">
+                                    <stop offset="80%" stop-color="#FBBC05" />
+                                    <stop offset="80%" stop-color="#E0E0E0" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#halfStar)"
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </div>
                 </div>
-                <div class="review-count">309 reviews</div>
+                <div class="review-count">14881 reviews</div>
             </div>
         </div>
     </div>
