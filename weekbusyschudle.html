@@ -10,39 +10,42 @@
         }
 
         #popular-times-widget {
+            width: 100%;
+            height: 28vh;
+            min-height: 200px;
             background: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
         }
 
         #popular-times-widget .pt-header {
-            font-size: 20px;
+            font-size: 14px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             color: #000000;
             text-align: left;
         }
 
         #popular-times-widget .pt-days {
             display: flex;
-            gap: 6px;
-            margin-bottom: 16px;
+            gap: 3px;
+            margin-bottom: 6px;
             justify-content: space-between;
-            flex-wrap: wrap;
         }
 
         #popular-times-widget .pt-day {
-            font-size: 13px;
+            font-size: 10px;
             font-weight: 500;
             color: #aaaaaa;
             cursor: pointer;
             transition: color 0.2s;
-            padding-bottom: 4px;
+            padding-bottom: 3px;
             position: relative;
             flex: 1;
             text-align: center;
-            min-width: 32px;
         }
 
         #popular-times-widget .pt-day.active {
@@ -64,13 +67,13 @@
         #popular-times-widget .pt-info {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 14px;
-            font-size: 13px;
+            gap: 4px;
+            margin-bottom: 6px;
+            font-size: 9px;
         }
 
         #popular-times-widget .pt-icon {
-            font-size: 18px;
+            font-size: 12px;
         }
 
         #popular-times-widget .pt-time {
@@ -82,10 +85,10 @@
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            height: 120px;
-            gap: 5px;
-            margin-bottom: 8px;
-            padding: 0 2px 10px 2px;
+            flex: 1;
+            gap: 3px;
+            margin-bottom: 4px;
+            padding: 0 2px 4px 2px;
             border-bottom: 2px solid #333333;
         }
 
@@ -93,7 +96,7 @@
             flex: 1;
             background: linear-gradient(180deg, #ff9955 0%, #ff8533 100%);
             border-radius: 50px;
-            min-width: 8px;
+            min-width: 5px;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -112,45 +115,21 @@
             display: flex;
             justify-content: space-between;
             padding: 0 4px;
-            margin-top: 6px;
+            margin-top: 3px;
         }
 
         #popular-times-widget .pt-label {
-            font-size: 12px;
+            font-size: 9px;
             font-weight: 600;
             color: #333333;
         }
 
         #popular-times-widget .pt-hours {
             text-align: center;
-            margin-top: 12px;
-            font-size: 14px;
+            margin-top: 6px;
+            font-size: 10px;
             font-weight: 600;
             color: #ff8533;
-        }
-
-        @media (max-width: 768px) {
-            #popular-times-widget {
-                padding: 16px;
-            }
-
-            #popular-times-widget .pt-header {
-                font-size: 18px;
-            }
-
-            #popular-times-widget .pt-day {
-                font-size: 11px;
-                min-width: 28px;
-                padding-bottom: 3px;
-            }
-
-            #popular-times-widget .pt-days {
-                gap: 4px;
-            }
-
-            #popular-times-widget .pt-chart {
-                height: 100px;
-            }
         }
     </style>
 

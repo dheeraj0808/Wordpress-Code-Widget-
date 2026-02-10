@@ -1,0 +1,333 @@
+<div id="google-review-widget" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
+        #google-review-widget * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #google-review-widget {
+            width: 100%;
+            height: 32vh;
+            min-height: 230px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #google-review-widget .grw-top {
+            background: linear-gradient(180deg, #D4A574 0%, #C4956A 50%, #B8896A 100%);
+            padding: 14px 10px 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: -12px -12px 0 -12px;
+        }
+
+        #google-review-widget .grw-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #1f1f1f;
+            margin-bottom: 10px;
+        }
+
+        #google-review-widget .grw-title span {
+            font-style: italic;
+        }
+
+        #google-review-widget .grw-features {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        #google-review-widget .grw-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        #google-review-widget .grw-icon {
+            width: 28px;
+            height: 28px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        #google-review-widget .grw-icon svg {
+            width: 12px;
+            height: 12px;
+            stroke: #B8896A;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        #google-review-widget .grw-label {
+            font-size: 6px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            color: #5a4a3a;
+            text-transform: uppercase;
+        }
+
+        #google-review-widget .grw-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 8px;
+            margin: -25px 5px 6px 5px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #google-review-widget .grw-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 2px;
+        }
+
+        #google-review-widget .grw-glogo {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        #google-review-widget .grw-info {
+            flex: 1;
+        }
+
+        #google-review-widget .grw-rating-row {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        #google-review-widget .grw-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1f1f1f;
+            line-height: 1;
+        }
+
+        #google-review-widget .grw-stars {
+            display: flex;
+            gap: 1px;
+        }
+
+        #google-review-widget .grw-star {
+            width: 7px;
+            height: 7px;
+        }
+
+        #google-review-widget .grw-avg {
+            font-size: 5px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            color: #888888;
+            margin-top: 1px;
+        }
+
+        #google-review-widget .grw-count {
+            font-size: 10px;
+            font-weight: 700;
+            color: #1f1f1f;
+            text-align: center;
+            margin-top: 3px;
+        }
+
+        #google-review-widget .grw-bottom {
+            text-align: center;
+            padding-top: 3px;
+        }
+
+        #google-review-widget .grw-connect {
+            font-size: 6px;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            color: #aaaaaa;
+            margin-bottom: 5px;
+        }
+
+        #google-review-widget .grw-social {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        #google-review-widget .grw-social a {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        #google-review-widget .grw-social a:hover {
+            border-color: #B8896A;
+            background: #faf6f3;
+        }
+
+        #google-review-widget .grw-social svg {
+            width: 9px;
+            height: 9px;
+            fill: #555555;
+        }
+
+        #google-review-widget .grw-social a:hover svg {
+            fill: #B8896A;
+        }
+    </style>
+
+    <!-- Top Section -->
+    <div class="grw-top">
+        <h2 class="grw-title">Material <span>Excellence</span></h2>
+
+        <div class="grw-features">
+            <div class="grw-feature">
+                <div class="grw-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8.17 20C12.52 20 16 16.52 16 12.17C16 11.18 15.79 10.25 15.43 9.41L17 8Z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M17 8C17 8 19 6 21 3C13 3 8.5 7.5 8.5 7.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="grw-label">Eco-Friendly</span>
+            </div>
+            <div class="grw-feature">
+                <div class="grw-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 9L12 22L22 9L12 2Z" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 9H22" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 9L12 2L16 9" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 9L12 22L16 9" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="grw-label">Lifetime</span>
+            </div>
+            <div class="grw-feature">
+                <div class="grw-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 21H15" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 21V17" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5 17H19L17 8H7L5 17Z" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 8L9 3H15L17 8" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 8V3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="grw-label">Artisanal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Card -->
+    <div class="grw-card">
+        <div class="grw-header">
+            <svg class="grw-glogo" viewBox="0 0 48 48">
+                <path
+                    d="M24.48 19.636V28.727H36.917C36.436 31.255 34.807 34.2 31.52 36.255L31.489 36.454L39.168 42.6L39.604 42.645C43.636 38.836 45.927 33.073 45.927 26.182C45.927 24.655 45.789 23.127 45.514 21.636L24.48 19.636Z"
+                    fill="#4285F4" />
+                <path
+                    d="M10.963 28.209L9.605 29.287L3.382 34.027C6.965 41.127 14.291 46 22.909 46C29.073 46 34.255 43.927 38.073 40.364L30.545 34.473C28.582 35.855 25.964 36.764 22.909 36.764C16.964 36.764 11.891 32.891 10.073 27.636L10.963 28.209Z"
+                    fill="#34A853" />
+                <path
+                    d="M3.382 14.036C1.745 17.309 0.818 20.927 0.818 24.727C0.818 28.527 1.745 32.145 3.382 35.418L10.964 28.209C10.509 26.782 10.255 25.273 10.255 23.727C10.255 22.182 10.509 20.673 10.964 19.245L3.382 14.036Z"
+                    fill="#FBBC05" />
+                <path
+                    d="M22.909 10.691C27.236 10.691 30.182 12.582 31.855 14.145L38.291 7.818C34.218 4 29.055 1.455 22.909 1.455C14.291 1.455 6.965 6.327 3.382 13.418L10.855 20.582C11.891 15.382 16.964 10.691 22.909 10.691Z"
+                    fill="#EA4335" />
+            </svg>
+            <div class="grw-info">
+                <div class="grw-rating-row">
+                    <span class="grw-number">4.8</span>
+                    <div class="grw-stars">
+                        <svg class="grw-star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="grw-star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="grw-star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="grw-star" viewBox="0 0 24 24" fill="#FBBC05">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="grw-star" viewBox="0 0 24 24">
+                            <defs>
+                                <linearGradient id="grwHalf">
+                                    <stop offset="80%" stop-color="#FBBC05" />
+                                    <stop offset="80%" stop-color="#E0E0E0" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#grwHalf)"
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="grw-avg">AVERAGE CUSTOMER RATING</div>
+            </div>
+        </div>
+        <div class="grw-count">14,881 Trusted Reviews</div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="grw-bottom">
+        <div class="grw-connect">CONNECT WITH OUR COMMUNITY</div>
+        <div class="grw-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"
+                        fill="none" />
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none" />
+                    <circle cx="18" cy="6" r="1.2" fill="currentColor" />
+                </svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24">
+                    <rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" stroke-width="1.5"
+                        fill="none" />
+                    <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor" />
+                </svg></a>
+            <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                        fill="currentColor" />
+                </svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5"
+                        fill="none" />
+                    <path d="M8 10V16M8 7V7.01M12 16V13C12 11.5 13 10 14.5 10C16 10 17 11.5 17 13V16M12 16V10"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                        fill="none" />
+                </svg></a>
+            <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none" />
+                    <path
+                        d="M12 6C9.24 6 7 8.24 7 11C7 12.93 8.13 14.59 9.78 15.36C9.72 14.9 9.67 14.2 9.81 13.68L10.65 10.32C10.65 10.32 10.39 9.87 10.39 9.2C10.39 8.15 11 7.44 11.76 7.44C12.4 7.44 12.71 7.92 12.71 8.5C12.71 9.16 12.28 10.13 12.05 11.03C11.87 11.78 12.42 12.39 13.16 12.39C14.5 12.39 15.53 10.96 15.53 8.93C15.53 7.13 14.26 5.88 12.05 5.88C9.52 5.88 8 7.78 8 9.77C8 10.45 8.23 11.16 8.57 11.56L8.29 12.7C8.29 12.7 7.32 11.7 7.32 10.23C7.32 7.8 9.17 5.5 12.28 5.5C14.74 5.5 16.68 7.3 16.68 9.88C16.68 12.51 15.04 14.57 12.76 14.57C11.99 14.57 11.27 14.15 11 13.65L10.5 15.55C10.28 16.37 9.73 17.4 9.35 18C10.18 18.26 11.07 18.4 12 18.4C14.76 18.4 17 16.16 17 13.4C17 8.24 14.76 6 12 6Z"
+                        fill="currentColor" />
+                </svg></a>
+        </div>
+    </div>
+</div>

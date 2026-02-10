@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Excellence - Reviews Widget</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .widget-container {
+            max-width: 420px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Top Section with Gradient */
+        .top-section {
+            background: linear-gradient(180deg, #D4A574 0%, #C4956A 50%, #B8896A 100%);
+            padding: 40px 24px 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #1f1f1f;
+            margin-bottom: 32px;
+        }
+
+        .main-title span {
+            font-style: italic;
+        }
+
+        /* Features Row */
+        .features-row {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #B8896A;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .feature-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #5a4a3a;
+            text-transform: uppercase;
+        }
+
+        /* Review Card */
+        .review-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin: -60px 20px 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .google-logo {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .rating-info {
+            flex: 1;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rating-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f1f1f;
+            line-height: 1;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
+        }
+
+        .rating-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #888888;
+            margin-top: 4px;
+        }
+
+        .review-count {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f1f1f;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Bottom Section */
+        .bottom-section {
+            background: #ffffff;
+            padding: 32px 24px 40px;
+            text-align: center;
+        }
+
+        .connect-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #aaaaaa;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-icon:hover {
+            border-color: #B8896A;
+            background: #faf6f3;
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #555555;
+        }
+
+        .social-icon:hover svg {
+            fill: #B8896A;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .widget-container {
+                margin: 20px 16px;
+                border-radius: 20px;
+            }
+
+            .top-section {
+                padding: 32px 20px 90px;
+            }
+
+            .main-title {
+                font-size: 26px;
+                margin-bottom: 24px;
+            }
+
+            .features-row {
+                gap: 20px;
+            }
+
+            .feature-icon {
+                width: 54px;
+                height: 54px;
+            }
+
+            .feature-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .feature-label {
+                font-size: 9px;
+            }
+
+            .review-card {
+                margin: -50px 16px 0;
+                padding: 24px 20px;
+            }
+
+            .google-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .rating-number {
+                font-size: 28px;
+            }
+
+            .review-count {
+                font-size: 18px;
+            }
+
+            .social-icons {
+                gap: 14px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <!-- Top Section with Gradient -->
+        <div class="top-section">
+            <h2 class="main-title">Material <span>Excellence</span></h2>
+
+            <!-- Features Row -->
+            <div class="features-row">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Eco Friendly Leaf Icon -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8.17 20C12.52 20 16 16.52 16 12.17C16 11.18 15.79 10.25 15.43 9.41L17 8Z"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17 8C17 8 19 6 21 3C13 3 8.5 7.5 8.5 7.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="feature-label">Eco-Friendly</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Lifetime Diamond Icon -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 9L12 22L22 9L12 2Z" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 9H22" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 9L12 2L16 9" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 9L12 22L16 9" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="feature-label">Lifetime</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Artisanal Lamp Icon -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 21H15" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 21V17" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5 17H19L17 8H7L5 17Z" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 8L9 3H15L17 8" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 8V3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="feature-label">Artisanal</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Card -->
+        <div class="review-card">
+            <div class="review-header">
+                <svg class="google-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24.48 19.636V28.727H36.917C36.436 31.255 34.807 34.2 31.52 36.255L31.489 36.454L39.168 42.6L39.604 42.645C43.636 38.836 45.927 33.073 45.927 26.182C45.927 24.655 45.789 23.127 45.514 21.636L24.48 19.636Z"
+                        fill="#4285F4" />
+                    <path
+                        d="M10.963 28.209L9.605 29.287L3.382 34.027C6.965 41.127 14.291 46 22.909 46C29.073 46 34.255 43.927 38.073 40.364L30.545 34.473C28.582 35.855 25.964 36.764 22.909 36.764C16.964 36.764 11.891 32.891 10.073 27.636L10.963 28.209Z"
+                        fill="#34A853" />
+                    <path
+                        d="M3.382 14.036C1.745 17.309 0.818 20.927 0.818 24.727C0.818 28.527 1.745 32.145 3.382 35.418L10.964 28.209C10.509 26.782 10.255 25.273 10.255 23.727C10.255 22.182 10.509 20.673 10.964 19.245L3.382 14.036Z"
+                        fill="#FBBC05" />
+                    <path
+                        d="M22.909 10.691C27.236 10.691 30.182 12.582 31.855 14.145L38.291 7.818C34.218 4 29.055 1.455 22.909 1.455C14.291 1.455 6.965 6.327 3.382 13.418L10.855 20.582C11.891 15.382 16.964 10.691 22.909 10.691Z"
+                        fill="#EA4335" />
+                </svg>
+                <div class="rating-info">
+                    <div class="rating-row">
+                        <span class="rating-number">4.8</span>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="#FBBC05">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg class="star" viewBox="0 0 24 24">
+                                <defs>
+                                    <linearGradient id="halfStar">
+                                        <stop offset="80%" stop-color="#FBBC05" />
+                                        <stop offset="80%" stop-color="#E0E0E0" />
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#halfStar)"
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="rating-label">AVERAGE CUSTOMER RATING</div>
+                </div>
+            </div>
+            <div class="review-count">14,881 Trusted Reviews</div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <div class="connect-label">CONNECT WITH OUR COMMUNITY</div>
+            <div class="social-icons">
+                <!-- Instagram -->
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"
+                            fill="none" />
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none" />
+                        <circle cx="18" cy="6" r="1.2" fill="currentColor" />
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="#" class="social-icon" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" stroke-width="1.5"
+                            fill="none" />
+                        <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="currentColor" />
+                    </svg>
+                </a>
+                <!-- WhatsApp -->
+                <a href="#" class="social-icon" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="#" class="social-icon" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5"
+                            fill="none" />
+                        <path d="M8 10V16M8 7V7.01M12 16V13C12 11.5 13 10 14.5 10C16 10 17 11.5 17 13V16M12 16V10"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            fill="none" />
+                    </svg>
+                </a>
+                <!-- Pinterest -->
+                <a href="#" class="social-icon" aria-label="Pinterest">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none" />
+                        <path
+                            d="M12 6C9.24 6 7 8.24 7 11C7 12.93 8.13 14.59 9.78 15.36C9.72 14.9 9.67 14.2 9.81 13.68L10.65 10.32C10.65 10.32 10.39 9.87 10.39 9.2C10.39 8.15 11 7.44 11.76 7.44C12.4 7.44 12.71 7.92 12.71 8.5C12.71 9.16 12.28 10.13 12.05 11.03C11.87 11.78 12.42 12.39 13.16 12.39C14.5 12.39 15.53 10.96 15.53 8.93C15.53 7.13 14.26 5.88 12.05 5.88C9.52 5.88 8 7.78 8 9.77C8 10.45 8.23 11.16 8.57 11.56L8.29 12.7C8.29 12.7 7.32 11.7 7.32 10.23C7.32 7.8 9.17 5.5 12.28 5.5C14.74 5.5 16.68 7.3 16.68 9.88C16.68 12.51 15.04 14.57 12.76 14.57C11.99 14.57 11.27 14.15 11 13.65L10.5 15.55C10.28 16.37 9.73 17.4 9.35 18C10.18 18.26 11.07 18.4 12 18.4C14.76 18.4 17 16.16 17 13.4C17 8.24 14.76 6 12 6Z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
