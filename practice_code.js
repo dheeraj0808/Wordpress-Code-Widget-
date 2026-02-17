@@ -14,3 +14,4 @@ function add(a, b) {
 
 welcomeMessage();
 console.log("Sum of 5 and 10 is: " + add(5, 10));
+// changes for the git dev
