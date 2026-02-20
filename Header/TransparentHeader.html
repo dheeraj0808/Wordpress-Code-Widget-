@@ -1,0 +1,27 @@
+selector.elementor-sticky--effects{
+background-color: rgba(255,255,255,0.2)!important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+}
+selector{
+transition: background-color 1s ease !important;
+}
+selector.elementor-sticky--effects >.elementor-container{
+min-height: 70px;
+}
+selector > .elementor-container{
+transition: min-height 1s ease !important;
+}
+
+.header-img img {
+max-width: 170px;
+height: auto;
+transition: all 0.5s ease;
+}
+.elementor-sticky--effects .header-img img {
+max-width: 150px;
+height: auto;
+}
+
+
